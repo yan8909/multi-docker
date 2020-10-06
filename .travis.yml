@@ -6,7 +6,7 @@ before_install:
     - docker build -t yan8909/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - ddocker run -e CI=true yan8909/react-test npm test
+    - docker run -e CI=true yan8909/react-test npm test
 
 after_success:
     - docker build -t yan8909/multi-client ./client
